@@ -1,0 +1,17 @@
+
+name: Build WhatsApp Lite APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build with Buildozer
+        uses: docker://ghcr.io/kivy/buildozer:latest
+        with:
+          args: buildozer android debug
