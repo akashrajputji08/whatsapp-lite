@@ -15,3 +15,11 @@ jobs:
         uses: docker://ghcr.io/kivy/buildozer:latest
         with:
           args: --allow-root android debug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: WhatsApp-Lite-APK
+          path: bin/*.apk
+          if-no-files-found: error
