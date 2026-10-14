@@ -14,4 +14,4 @@ jobs:
       - name: Build with Buildozer
         uses: docker://ghcr.io/kivy/buildozer:latest
         with:
-          args: buildozer android debug
+          args: --allow-root android debug
